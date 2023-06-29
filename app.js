@@ -1,11 +1,7 @@
 async function fetcher(url) {
     try {
     const resp = await fetch(url, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        cache: "no-cache"
+        method: "GET"
     });
     const data = await resp.json();
     return data;
