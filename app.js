@@ -4,7 +4,8 @@ async function fetcher(url) {
         method: "GET",
         headers: {
             "Content-Type": "application/json"
-        }
+        },
+        cache: "no-cache"
     });
     const data = await resp.json();
     return data;
@@ -32,5 +33,7 @@ const setHtml = (IP) => {
     document.body.append(elem);
 }
 
-const ip = main().then(re => setHtml(re.ip));
+const ip = main().then(re => {
+    console.log(re.ip);
+    setHtml(re.ip)});
 
